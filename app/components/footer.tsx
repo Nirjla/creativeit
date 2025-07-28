@@ -4,10 +4,10 @@ import { motion } from "framer-motion"
 
 export default function Footer() {
   const socialLinks = [
-    { name: "GitHub", href: "#" },
-    { name: "LinkedIn", href: "#" },
-    { name: "Twitter", href: "#" },
-    { name: "Dribbble", href: "#" },
+    { name: "GitHub", href: "https://github.com/nirjla" },
+    { name: "LinkedIn", href: "https://www.linkedin.com/in/nirjalashakya/" },
+    { name: "Twitter", href: "https://x.com/nirjalashakya" },
+    // { name: "Dribbble", href: "#" },
   ]
 
   return (

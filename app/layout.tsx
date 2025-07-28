@@ -19,8 +19,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeProvider defaultTheme="system" storageKey="portfolio-theme">
-          <Header />
+        <ThemeProvider defaultTheme="dark" storageKey="portfolio-theme">
+          {/* <Header /> */}
           <ThemeSwitcher />
           {children}
         </ThemeProvider>

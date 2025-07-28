@@ -10,12 +10,8 @@ export default function ThemeSwitcher() {
   const [isThemeMenuOpen, setIsThemeMenuOpen] = useState(false)
 
   const themes = [
-    { name: "light", icon: Sun, label: "Light", color: "bg-yellow-400" },
-    { name: "dark", icon: Moon, label: "Dark", color: "bg-gray-800" },
-    { name: "system", icon: Monitor, label: "System", color: "bg-blue-500" },
-    { name: "purple", icon: Palette, label: "Purple", color: "bg-purple-500" },
-    { name: "blue", icon: Palette, label: "Blue", color: "bg-blue-600" },
-    { name: "green", icon: Palette, label: "Green", color: "bg-green-500" },
+    { name: "light", icon: Sun, label: "Light", color: "bg-zinc-100" },
+    { name: "dark", icon: Moon, label: "Dark", color: "bg-zinc-900" },
   ]
 
   const currentTheme = themes.find((t) => t.name === theme) || themes[0]
@@ -44,11 +40,10 @@ export default function ThemeSwitcher() {
                       setTheme(themeOption.name)
                       setIsThemeMenuOpen(false)
                     }}
-                    className={`flex w-full items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-700 ${
-                      theme === themeOption.name
+                    className={`flex w-full items-center gap-3 rounded-md px-3 py-2 text-sm transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-700 ${theme === themeOption.name
                         ? "bg-zinc-100 dark:bg-zinc-700 text-zinc-900 dark:text-zinc-100"
                         : "text-zinc-600 dark:text-zinc-400"
-                    }`}
+                      }`}
                   >
                     <div className={`h-3 w-3 rounded-full ${themeOption.color}`} />
                     <Icon className="h-4 w-4" />

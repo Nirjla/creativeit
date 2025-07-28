@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
-import { Github, Linkedin, Twitter, X, MapPin, Calendar, Award, Code, Mail, Phone } from "lucide-react"
+import { Github, Linkedin, Twitter, X, MapPin, Calendar, Award, Code, Mail, Phone, Star, Users, Sparkles } from "lucide-react"
 import { supabase } from "@/lib/supabase-client"
 import { TeamMember } from "@/lib/types"
 
@@ -411,28 +411,31 @@ export default function Team() {
 
         {/* Team stats */}
         <motion.div
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
-          initial={{ opacity: 0, y: 20 }}
+          className="grid grid-cols-3 gap-8 mt-16 max-w-2xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
           viewport={{ once: true }}
         >
           {[
-            { number: "6", label: "Team Members" },
-            { number: "50+", label: "Projects Completed" },
-            { number: "3", label: "Years Experience" },
-            { number: "24/7", label: "Support Available" },
+            { icon: Users, number: "6+", label: "Creative Wings" },
+            { icon: Star, number: "50+", label: "Combined Years" },
+            { icon: Users, number: "100+", label: "Total Members" },
           ].map((stat, index) => (
-            <motion.div key={index} className="text-center" whileHover={{ scale: 1.05 }}>
+            <motion.div
+              key={index}
+              className="text-center"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
               <motion.div
-                className="text-3xl font-bold text-zinc-900 dark:text-zinc-100 mb-2"
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-zinc-100 to-zinc-200 dark:from-zinc-700 dark:to-zinc-800 rounded-full mb-3"
+                animate={{ rotate: [0, 360] }}
+                transition={{ duration: 10, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
               >
-                {stat.number}
+                <stat.icon className="h-6 w-6 text-zinc-600 dark:text-zinc-400" />
               </motion.div>
+              <div className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-1">{stat.number}</div>
               <div className="text-sm text-zinc-600 dark:text-zinc-400">{stat.label}</div>
             </motion.div>
           ))}
@@ -475,7 +478,7 @@ export default function Team() {
                   <div className="flex-1">
                     <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100 mb-1">{selectedMember.name}</h2>
                     <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-2">{selectedMember.role}</p>
-                    <div className="flex items-center gap-4 text-sm text-zinc-500 dark:text-zinc-400">
+                    {/* <div className="flex items-center gap-4 text-sm text-zinc-500 dark:text-zinc-400">
                       <div className="flex items-center gap-1">
                         <MapPin className="h-4 w-4" />
                         {selectedMember.location}
@@ -484,38 +487,9 @@ export default function Team() {
                         <Calendar className="h-4 w-4" />
                         Joined {selectedMember.join_date}
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
-
-                {/* Team stats */}
-                <motion.div
-                  className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.3 }}
-                  viewport={{ once: true }}
-                >
-                  {[
-                    { number: "6", label: "Team Members" },
-                    { number: "50+", label: "Projects Completed" },
-                    { number: "3", label: "Years Experience" },
-                    { number: "24/7", label: "Support Available" }
-                  ].map((stat, index) => (
-                    <motion.div key={index} className="text-center" whileHover={{ scale: 1.05 }}>
-                      <motion.div
-                        className="text-3xl font-bold text-zinc-900 dark:text-zinc-100 mb-2"
-                        initial={{ scale: 0 }}
-                        whileInView={{ scale: 1 }}
-                        transition={{ duration: 0.5, delay: index * 0.1 }}
-                        viewport={{ once: true }}
-                      >
-                        {stat.number}
-                      </motion.div>
-                      <div className="text-sm text-zinc-600 dark:text-zinc-400">{stat.label}</div>
-                    </motion.div>
-                  ))}
-                </motion.div>
               </div>
 
               {/* Modal Content */}
@@ -531,10 +505,10 @@ export default function Team() {
                       <Mail className="h-4 w-4 text-zinc-500 dark:text-zinc-400" />
                       <span className="text-sm text-zinc-700 dark:text-zinc-300">{selectedMember.email}</span>
                     </div>
-                    <div className="flex items-center gap-3 p-3 bg-zinc-50 dark:bg-zinc-700 rounded-lg">
+                    {/* <div className="flex items-center gap-3 p-3 bg-zinc-50 dark:bg-zinc-700 rounded-lg">
                       <Phone className="h-4 w-4 text-zinc-500 dark:text-zinc-400" />
                       <span className="text-sm text-zinc-700 dark:text-zinc-300">{selectedMember.phone}</span>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
 
@@ -646,7 +620,7 @@ export default function Team() {
                       <Linkedin className="h-4 w-4" />
                       LinkedIn
                     </motion.a>
-                    <motion.a
+                    {/* <motion.a
                       href={selectedMember.social_twitter}
                       className="flex items-center gap-2 px-4 py-2 bg-sky-500 text-white rounded-lg text-sm font-medium transition-colors hover:bg-sky-600"
                       whileHover={{ scale: 1.05 }}
@@ -654,7 +628,7 @@ export default function Team() {
                     >
                       <Twitter className="h-4 w-4" />
                       Twitter
-                    </motion.a>
+                    </motion.a> */}
                   </div>
                 </div>
               </div>
