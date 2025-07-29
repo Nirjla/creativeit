@@ -43,4 +43,4 @@ jobs:
           server: ftp.primeitclub.com
           username: nirjla@nirjla.primeitclub.com
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./out
+          local-dir: ./out/
