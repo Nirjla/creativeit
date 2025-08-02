@@ -58,7 +58,6 @@ export default function Projects() {
       </section>
     )
   }
-  console.log(projects)
   const upcomingProjects = [
     {
       ...projects[0],
