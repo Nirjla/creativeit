@@ -33,7 +33,7 @@ export default function Projects() {
         .select("*")
         .eq("featured", true)
         .order("created_at", { ascending: false })
-        .limit(4)
+      // .limit(4)
 
       if (error) throw error
 
@@ -58,17 +58,21 @@ export default function Projects() {
       </section>
     )
   }
-
+  console.log(projects)
   const upcomingProjects = [
     {
-      title: "ICT Meetup",
-      category: "Web Application",
+      ...projects[0],
       progress: 0,
       status: "Starting Soon",
-      tech: ["React", "TypeScript", "Node js", "Postgres"],
+      color: "from-purple-500 to-pink-500",
+      icon: Rocket,
+    },
+    {
+      ...projects[1],
+      progress: 0,
+      status: "Starting Soon",
       color: "from-blue-500 to-cyan-500",
       icon: Zap,
-      description: "Primary event of Prime It Club",
     },
     // {
     //   title: "Mobile Experience Platform",
@@ -302,7 +306,7 @@ export default function Projects() {
 
                         {/* Tech Stack */}
                         <div className="flex flex-wrap gap-1">
-                          {project.tech.map((tech, techIndex) => (
+                          {project.tech_stack?.map((tech: string, techIndex: number) => (
                             <motion.span
                               key={tech}
                               initial={{ opacity: 0, scale: 0.8 }}
