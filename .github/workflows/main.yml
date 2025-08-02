@@ -41,6 +41,6 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ftp.primeitclub.com
-          username: nirjla@nirjla.primeitclub.com
+          username: nirjlait@primeitclub.com
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./out/
