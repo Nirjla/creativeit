@@ -50,7 +50,7 @@ export default function Footer() {
           className="mt-8 border-t border-zinc-200 dark:border-zinc-700 pt-8 text-center"
         >
           <p className="text-sm text-zinc-500 dark:text-zinc-400">
-            © {new Date().getFullYear()} Nirjla. Crafted with code and creativity.
+            © {new Date().getFullYear()} Nirjla.
           </p>
         </motion.div>
       </div>

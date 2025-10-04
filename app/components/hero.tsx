@@ -210,9 +210,13 @@ export default function Hero() {
           <button className="rounded-lg border border-zinc-900 bg-zinc-900 px-6 py-3 text-white transition-all hover:bg-zinc-800 dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200" onClick={() => window.open("https://nirjalashakya.com.np", "_blank")}>
             Visit Portfolio
           </button>
-          <button className="rounded-lg border border-zinc-300 bg-white px-6 py-3 text-zinc-900 transition-all hover:bg-zinc-50 dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700" onClick={() => window.open("mailto:shakyanirjala6@gmail.com", "_blank")}>
+          <button className="rounded-lg border border-zinc-300 bg-white px-6 py-3 text-zinc-900 transition-all hover:bg-zinc-50 dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700" onClick={() => window.open("https://creativehub.primeitclub.com", "_blank")}>
+            Visit Creative Hub
+          </button>
+          <button className="rounded-lg border border-zinc-900 bg-zinc-900 px-6 py-3 text-white transition-all hover:bg-zinc-800 dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-200" onClick={() => window.open("mailto:shakyanirjala6@gmail.com", "_blank")}>
             Get in Touch
           </button>
+
         </motion.div>
       </div>
     </div>
